@@ -1,24 +1,42 @@
 using System;
-
-public class Charcountinstring
+class Wordreverse
 {
-    public static int count(string s, char c)
-    {
-        int res = 0;
+    static void reverse(char[] str,
+                        int start, int end)
+     {
+        char temp;
 
-        for (int i = 0; i < s.Length; i++)
+        while (start <= end)
         {
-            if (s[i] == c)
-                res++;
+            temp = str[start];
+            str[start] = str[end];
+            str[end] = temp;
+            start++;
+            end--;
         }
-
-        return res;
     }
-    public static void Main()
+    static char[] reverseWords(char[] s)
     {
-        string str = "Manogna";
-        char c = 'e';
-
-        Console.WriteLine(count(str, c));
+        int start = 0;
+        for (int end = 0;
+                 end < s.Length; end++)
+        {
+            if (s[end] == ' ')
+            {
+                reverse(s, start, end);
+                start = end + 1;
+            }
+        }
+        reverse(s, start, s.Length - 1);
+        reverse(s, 0, s.Length - 1);
+        return s;
+    }
+    public static void Main(String[] args)
+    {
+        String s = " ";
+        Console.WriteLine("enter the string");
+        s=Console.ReadLine();
+        char[] p = reverseWords(s.ToCharArray());
+        Console.Write(p);
     }
 }
