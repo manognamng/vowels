@@ -1,26 +1,34 @@
 using System;
-
-using System;
-
-if (boolean-expression)
+ 
+namespace Conditional
 {
-	if (nested-expression-1)
+	class Nested
 	{
-		// code to be executed
-	}
-	else
-	{
-	// code to be executed
-	}
-}
-else
-{
-	if (nested-expression-2)
-	{
-		// code to be executed
-	}
-	else
-	{
-		// code to be executed
+		public static void Main(string[] args)
+		{
+			int first = 7, second = -23, third = 13;
+			if (first > second)
+			{
+				if (firstNumber > third)
+				{
+					Console.WriteLine("{0} is the largest", first);
+				}
+				else
+				{
+					Console.WriteLine("{0} is the largest", third);
+				}
+			}
+			else
+			{
+				if (second > third)
+				{
+					Console.WriteLine("{0} is the largest", second);
+				}
+				else
+				{
+					Console.WriteLine("{0} is the largest", third);
+				}
+			}
+		}
 	}
 }
